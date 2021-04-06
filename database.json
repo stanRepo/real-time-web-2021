@@ -31,17 +31,6 @@
       "socketID": "5u-FsBKtBouAXcguAAAJ"
     },
     {
-      "userName": "Jelmer",
-      "message": "blob:http://localhost:8080/163c9a51-cd9c-452f-baf3-514b48921ccd",
-      "socketID": "Qb9cfX-RgY8L6zU8AAAE"
-    },
-    {
-      "userName": "Jelmer",
-      "message": "blob:http://localhost:8080/c8998f66-9c17-4721-8b9c-13f4f55e00fc",
-      "socketID": "I8uNvb245dKKfZXBAAAF",
-      "color": "531f6f"
-    },
-    {
       "userName": "Roy",
       "message": "test",
       "socketID": "yBYSxD4kG0XQbcafAAAJ",
@@ -58,12 +47,6 @@
       "message": "hoi",
       "socketID": "rCpxzfLLIzimKb93AAAI",
       "color": "7a13d5"
-    },
-    {
-      "userName": "Jelmer",
-      "message": "blob:http://localhost:8080/a1abfdae-acec-48e5-851f-ea4bef7c836b",
-      "socketID": "1O9Cj5XbCOqxvAqJAAAJ",
-      "color": "4d0841"
     },
     {
       "userName": "Roy",
