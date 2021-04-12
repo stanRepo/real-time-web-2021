@@ -5,6 +5,7 @@ export default function (player) {
 
   if (thisPlayer !== player && opponent === null) {
     //  check if opponent already exists in DOM
+    //  console.log(player);
     opponentsElement.insertAdjacentHTML(
       "beforeend",
       `   

@@ -3,6 +3,9 @@ export default function (socket) {
     const playerWhoLeft = document.getElementById(`playerID${socketID}`);
     console.dir(socketID);
     console.dir(playerWhoLeft);
-    playerWhoLeft.parentElement.removeChild(playerWhoLeft);
+    if (playerWhoLeft) {
+      // check if player was rendered
+      playerWhoLeft.parentElement.removeChild(playerWhoLeft);
+    }
   });
 }

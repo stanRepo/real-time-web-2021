@@ -4,6 +4,8 @@ import playerLeft from "./userActions/playerLeft.js";
 import renderCurrentUserID from "./userActions/renderCurrentUserID.js";
 import playersInRoom from "./userActions/playersInRoom.js";
 import login from "./userActions/login.js";
+import startGame from "./gameActions/startGame.js";
+import newHand from "./gameActions/newHand.js";
 
 const socket = io();
 
@@ -17,4 +19,9 @@ socket.on("connect", () => {
   userInput(socket);
 
   playerLeft(socket);
+  newHand(socket);
+
+  socket.on("startGame", (state) => {
+    startGame(socket);
+  });
 });

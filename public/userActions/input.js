@@ -40,7 +40,7 @@ function setReady(e, socket, socketID) {
 function setUnready(e, socket, socketID) {
   // set user to UNREADY
   e.target.setAttribute("data-name", "notready");
-  e.target.setAttribute("value", "Ready Up");
+  e.target.setAttribute("value", "Not Ready");
   e.target.classList.add("red");
   e.target.classList.remove("green");
   socket.emit("playerNotReady", socketID);

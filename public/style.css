@@ -9,11 +9,11 @@ section > img {
   max-height: 100px;
 }
 
-section.opponent:nth-child(odd) {
-  float: right;
-}
-section.opponent:nth-child(even) {
-  float: left;
+section#opponents {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 section.currentUser {
@@ -21,7 +21,14 @@ section.currentUser {
 
   bottom: 0px;
   position: absolute;
-  grid-template-areas: "a a a a";
+  grid-template-areas:
+    "myDice myDice myDice myDice"
+    "a a a a";
+}
+section.currentUser > fieldset > img {
+  max-width: 20px;
+  max-height: 20px;
+  grid-area: "myDice";
 }
 
 .green {
