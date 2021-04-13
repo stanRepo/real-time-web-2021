@@ -6,20 +6,23 @@ import playersInRoom from "./userActions/playersInRoom.js";
 import login from "./userActions/login.js";
 import startGame from "./gameActions/startGame.js";
 import newHand from "./gameActions/newHand.js";
-
+import nextPlayerTurn from "./gameActions/nextPlayerTurn.js";
+import playingFieldUpdate from "./gameActions/playingFieldUpdate.js";
 const socket = io();
 
 socket.on("connect", () => {
   renderCurrentUserID(socket); // needs to be first
+  playingFieldUpdate(socket);
   console.dir(`This socketID = ${document.cookie}`);
 
-  login(socket);
+  login(socket); // connect to the server with cookieID
 
   playersInRoom(socket);
-  userInput(socket);
+  userInput(socket); // listen for user input
 
-  playerLeft(socket);
-  newHand(socket);
+  playerLeft(socket); // this happens when players leave
+  newHand(socket); // this happens when a player gets a new hand
+  nextPlayerTurn(socket); // this happens when the turn changes
 
   socket.on("startGame", (state) => {
     startGame(socket);

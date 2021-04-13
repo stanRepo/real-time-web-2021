@@ -11,10 +11,9 @@ exports.playerReadyStatus = function (
     console.log(`player is ready. ID: ${socketID}`);
     game.playersInRoom[socketID].status = "ready";
     readyPlayers.push(socketID); // store status
+
     // console.log(Object.keys(game.playersInRoom).length);
-    console.log(readyPlayers);
-    console.log(readyPlayers.length);
-    console.log(Object.keys(game.playersInRoom).length);
+
     if (readyPlayers.length === Object.keys(game.playersInRoom).length) {
       //  check if all players are ready
       console.log("all players ready START GAME");

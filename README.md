@@ -65,6 +65,34 @@ The referee is a piece of software on the server side of this application.
 
 ## App
 
+# Concepts:
+
+Since I had chosen the this game as a main concept my Lecturer Lukas told me to create 3 variations of the game. The variations should be about how the user interacts with the game.
+
+_Concept 1_
+
+Every player plays on his own device connected to the "game" server by sockets
+
+<details>
+
+</details>
+
+_Concept 2_
+
+Every player is connected to the same device and plays the game on this single device.
+
+<details>
+
+</details>
+
+_Concept 3_
+
+Some players are playing the game on 1 device and some players are playing it on their own device.
+
+<details>
+
+</details>
+
 ### Coding Style
 
 For Coding style I took a look at the [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html).

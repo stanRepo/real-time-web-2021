@@ -10,47 +10,71 @@
   <body>
     <main>
       <section id="playingField">
-        <section id="opponents"></section>
+        <h3>Opponents</h3>
+        <ul id="currentBet">
+          <li class="dice"><img src="./assets/dice/1.png" alt="" /></li>
+          <li class="dice"><img src="./assets/dice/2.png" alt="" /></li>
+          <li class="dice"><img src="./assets/dice/3.png" alt="" /></li>
+          <li class="dice"><img src="./assets/dice/4.png" alt="" /></li>
+          <li class="dice"><img src="./assets/dice/5.png" alt="" /></li>
+          <li class="dice"><img src="./assets/dice/6.png" alt="" /></li>
+        </ul>
+      </section>
+      <section id="opponents"></section>
 
-        <section class="currentUser">
-          <fieldset>
-            <img class="myDice" src="./assets/dice/1.png" alt="" />
-            <img class="myDice" src="./assets/dice/2.png" alt="" />
-            <img class="myDice" src="./assets/dice/3.jpg" alt="" />
-            <img class="myDice" src="./assets/dice/4.png" alt="" />
-            <img class="myDice" src="./assets/dice/5.png" alt="" />
-            <img class="myDice" src="./assets/dice/6.png" alt="" />
-          </fieldset>
+      <section class="currentUser">
+        <fieldset id="inputDisplayNameFieldSet">
+          <h1>My user ID:</h1>
+          <img
+            id="currentUserIcon"
+            src="./assets/userIcon2.png"
+            alt=""
+            srcset=""
+          />
+          <p id="myID"></p>
+          <input
+            type="text"
+            placeholder="Your Display Name"
+            id="inputDisplayName"
+          />
 
-          <img src="./assets/userIcon2.png" alt="" srcset="" />
+          <button id="confirmUsernameBtn">Confirm Username</button>
+        </fieldset>
+        <fieldset>
+          <h3>Your Dice</h3>
+          <img class="myDice" src="./assets/dice/1.png" alt="" />
+          <img class="myDice" src="./assets/dice/2.png" alt="" />
+          <img class="myDice" src="./assets/dice/3.jpg" alt="" />
+          <img class="myDice" src="./assets/dice/4.png" alt="" />
+          <img class="myDice" src="./assets/dice/5.png" alt="" />
+          <img class="myDice" src="./assets/dice/6.png" alt="" />
+        </fieldset>
 
-          <fieldset id="inputDisplayNameFieldSet">
-            <h1>My user ID:</h1>
-            <p id="myID"></p>
-            <input
-              type="text"
-              placeholder="Your Display Name"
-              id="inputDisplayName"
-            />
+        <fieldset>
+          <h3>Moves</h3>
+          <input type="button" value="START" id="readyUpBtn" />
+          <input
+            type="button"
+            value="BLUFF"
+            class="hidden playBtn"
+            id="bluffBtn"
+          />
 
-            <button id="confirmUsernameBtn">Confirm Username</button>
-          </fieldset>
-          <fieldset>
-            <input type="button" value="START" id="readyUpBtn" />
+          <fieldset id="playerTurnInput">
+            <label for="whichDice"
+              >Which dice?<input id="whichDice" type="number"
+            /></label>
+            <label for="diceHowMany"
+              >How Many?<input id="diceHowMany" type="number"
+            /></label>
             <input
               type="button"
               value="CALL"
               class="hidden playBtn"
               id="callBtn"
             />
-            <input
-              type="button"
-              value="BLUFF"
-              class="hidden playBtn"
-              id="bluffBtn"
-            />
           </fieldset>
-        </section>
+        </fieldset>
       </section>
     </main>
     <script src="/socket.io/socket.io.js"></script>

@@ -10,7 +10,7 @@ export default function (player) {
       "beforeend",
       `   
           <section id="playerID${player}"class="opponent">
-          <p>Player ID: ${player}</p>
+          <p>Player ID: <span>${player}</span></p>
           <img src="./assets/userIcon1.png" alt="" srcset="" />
           </section>
           `

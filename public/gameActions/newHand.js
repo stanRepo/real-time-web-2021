@@ -6,6 +6,6 @@ export default function (socket) {
     });
 
     console.log("newHand = RENDERED");
-    console.log(hand);
+    // console.log(hand);
   });
 }
