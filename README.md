@@ -63,13 +63,25 @@ The referee is a piece of software on the server side of this application.
 
 </details>
 
-## App
+# Assignments
 
-# Assignment 1:
+## Assignments Week 1
+
+### Assignment 1
+
+During this assignment we worked in a group. Together we made the basic-chat app with real time functionality. [Repository](https://github.com/stanRepo/real-time-web-2021/tree/TEAM-CHAT-APP)
+
+### Assignment 2
+
+For this Assignment I chose to start working on the end assessment application. I felt like already had a good grip on the functionality of socketIO.
+
+## Assignments Week 2:
+
+### Assignment 1
 
 Since I had chosen the this game as a main concept my Lecturer Lukas told me to create 3 variations of the game. The variations should be about how the user interacts with the game.
 
-_Main data-model_
+_Data Lifecycle Diagram_
 
 This is what the main forces that influence the data are, who controlls them and where they are located.
 
@@ -83,9 +95,13 @@ This is what the main forces that influence the data are, who controlls them and
 
 _Concept 1_
 
-Every player plays on his own device connected to the "game" server by sockets
+Every player plays on his own device connected to the "game" server by sockets.
+
+Concept Drawing:
 
 <details>
+
+![Drawing Concept 1](./public/assets/drawings/RTW2021-concept-1.png)
 
 </details>
 
@@ -93,9 +109,19 @@ Every player plays on his own device connected to the "game" server by sockets
 
 _Concept 2_
 
-Every player is connected to the same device and plays the game on this single device.
+Every player is connected to the same device and plays the game on this single device. This concept is based more around the idea of coming together and play a board game. A form of socializing. Adding a layer of playfullness to a different (related / non-related) social activity. Players are invited to use this game as a "party" game.
+
+In this concept the player has the ability to select multiple players before the game starts. Therefore multiple players can play from the same device. After the turn ends the player should display a "warning, pass the device to player X" banner. To prevent the previous player from seeing the "player X's" diceheads.
+
+Extra:
+
+- This specific design lends itself good for display on a external screen. For instance screen mirroring with the Google Chromecast.
 
 <details>
+
+![Drawing Concept 2a](./public/assets/drawings/RTW2021-concept-2.png)
+
+![Drawing Concept 2b](./public/assets/drawings/RTW2021-concept-2b.png)
 
 </details>
 
