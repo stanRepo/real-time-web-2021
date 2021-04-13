@@ -74,8 +74,12 @@ _Main data-model_
 This is what the main forces that influence the data are, who controlls them and where they are located.
 
 <details>
-![diagram](./public/assets/drawings/concept-1.svg "Diagram")
+
+![Diagram](./public/assets/drawings/concept-1.svg)
+
 </details>
+
+---
 
 _Concept 1_
 
@@ -85,6 +89,8 @@ Every player plays on his own device connected to the "game" server by sockets
 
 </details>
 
+---
+
 _Concept 2_
 
 Every player is connected to the same device and plays the game on this single device.
@@ -93,6 +99,8 @@ Every player is connected to the same device and plays the game on this single d
 
 </details>
 
+---
+
 _Concept 3_
 
 Some players are playing the game on 1 device and some players are playing it on their own device.
@@ -100,6 +108,8 @@ Some players are playing the game on 1 device and some players are playing it on
 <details>
 
 </details>
+
+---
 
 ### Coding Style
 
