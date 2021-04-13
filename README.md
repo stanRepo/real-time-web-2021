@@ -65,9 +65,17 @@ The referee is a piece of software on the server side of this application.
 
 ## App
 
-# Concepts:
+# Assignment 1:
 
 Since I had chosen the this game as a main concept my Lecturer Lukas told me to create 3 variations of the game. The variations should be about how the user interacts with the game.
+
+_Main data-model_
+
+This is what the main forces that influence the data are, who controlls them and where they are located.
+
+<details>
+![diagram](./public/assets/drawings/concept-1.svg "Diagram")
+</details>
 
 _Concept 1_
 
