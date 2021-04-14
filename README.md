@@ -151,18 +151,7 @@ For this project I used _Firebase_ to store player moves and game information.
 
 </details>
 
-## Readme
-
-- Must not be complete.
-- Designed to be read by the user.
 
 ## Examples
 
-## You get
 
-- documentation (nicer than afterwards)
-- a chance to think about the software
-- guideline for the implementation
-- describe the interface. others could start working
-- basis for discussion
-- no limits for your ideas - paper and brain
