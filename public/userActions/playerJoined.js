@@ -12,6 +12,16 @@ export default function (player) {
           <section id="playerID${player}"class="opponent">
           <p>Player ID: <span>${player}</span></p>
           <img src="./assets/userIcon1.png" alt="" srcset="" />
+
+          <div id="opponentDiceGroup">
+          <div class="opponentDice">?</div>
+          <div class="opponentDice">?</div>
+          <div class="opponentDice">?</div>
+          <div class="opponentDice">?</div>
+          <div class="opponentDice">?</div>
+          <div class="opponentDice">?</div>
+
+          <div>
           </section>
           `
     );

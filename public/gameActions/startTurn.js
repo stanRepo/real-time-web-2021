@@ -4,23 +4,39 @@ export default function (socket, startingPlayer) {
   const opponentsIDList = document.querySelectorAll(".opponent > p > span");
   const opponents = document.querySelectorAll(".opponent");
   const currentUser = document.querySelector(".currentUser");
+  const callBtn = document.querySelector("#callBtn");
+  const bluffBtn = document.querySelector("#bluffBtn");
+  const whichDice = document.querySelector("#whichDice");
+  const diceHowMany = document.querySelector("#diceHowMany");
+  const playerTurnInput = document.querySelector("#playerTurnInput");
+  const itsNotYourTurnBanner = document.querySelector("#itsNotYourTurnBanner");
+
   if (myID === startingPlayer) {
     // This player has the turn
     currentUser.classList.add("itsMyTurnAnimation");
+    // remove input elements of currentUser because its not his turn
+    playerTurnInput.classList.remove("hidden");
+    bluffBtn.classList.remove("hidden");
+    // add banner
+    itsNotYourTurnBanner.classList.remove("hidden");
+
     opponents.forEach((el) => {
       el.classList.remove("itsMyTurnAnimation");
     });
 
-    const callBtn = document.querySelector("#callBtn");
-    const whichDice = document.querySelector("#whichDice");
-    const diceHowMany = document.querySelector("#diceHowMany");
-
     callBtn.addEventListener("click", (e) => {
-      console.log("callbtn fired");
-      socket.emit("confirmCall", {
-        whichDice: whichDice.value,
-        diceHowMany: diceHowMany.value,
-      });
+      if (diceHowMany.validity.valid === true) {
+        console.log("callbtn fired");
+        socket.emit("confirmCall", {
+          whichDice: whichDice.value,
+          diceHowMany: diceHowMany.value,
+        });
+      }
+    });
+
+    bluffBtn.addEventListener("click", (e) => {
+      console.log("bluffBtn fired");
+      socket.emit("confirmBluff");
     });
   } else {
     // this player doesn't have the turn
@@ -36,5 +52,11 @@ export default function (socket, startingPlayer) {
         el.parentElement.parentElement.classList.remove("itsMyTurnAnimation"); /// delete animation on opponents who dont have the turn
       }
     });
+
+    // remove input elements of currentUser because its not his turn
+    playerTurnInput.classList.add("hidden");
+    bluffBtn.classList.add("hidden");
+    // remove banner
+    itsNotYourTurnBanner.classList.add("hidden");
   }
 }

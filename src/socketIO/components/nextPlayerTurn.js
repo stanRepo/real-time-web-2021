@@ -19,6 +19,7 @@ exports.next = function (socket, socketID, game, io) {
   });
   console.log(`Players Available ${playersAvailable}`);
   game.nextPlayerTurn = playersAvailable[0];
+  console.log(playersAvailable.length);
 
   game.thisPlayerTurn = playersAvailable[0];
   io.emit("nextPlayerTurn", game.thisPlayerTurn); // start next turn
