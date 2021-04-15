@@ -13,10 +13,11 @@ exports.startGame = function (socket, socketID, game, io) {
     // sendHand
     io.to(currentPlayerSocket).emit("newHand", thisHand);
   });
-
   // start game
+
   const startingPlayer = selectStartingPlayer.select(game); // select player with first turn
   console.log(startingPlayer);
   game.thisPlayerTurn = startingPlayer;
   io.emit("startGame", game.thisPlayerTurn);
+  bool = true;
 };

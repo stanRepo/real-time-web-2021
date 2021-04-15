@@ -42,11 +42,9 @@ export default function (socket, startingPlayer) {
     // this player doesn't have the turn
     currentUser.classList.remove("itsMyTurnAnimation");
     opponentsIDList.forEach((el) => {
-      console.log(el.innerText);
       if (el.innerText === startingPlayer) {
         // find opponent whos turn it is
-        console.log(el.innerText);
-        console.log(el.parentElement.parentElement);
+
         el.parentElement.parentElement.classList.add("itsMyTurnAnimation"); // set animation
       } else {
         el.parentElement.parentElement.classList.remove("itsMyTurnAnimation"); /// delete animation on opponents who dont have the turn

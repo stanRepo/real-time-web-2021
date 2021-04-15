@@ -22,10 +22,6 @@ export default function (socket) {
           console.log(`READY - userID = ${socketID}`);
         }
       }
-      if (e.target === callBtn) {
-      }
-      if (e.target === bluffBtn) {
-      }
     });
   });
 }

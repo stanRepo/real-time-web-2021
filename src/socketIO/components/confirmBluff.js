@@ -32,17 +32,15 @@ exports.bluff = function (socket, socketID, game, io) {
       totals[game.currentBet.whichDice] < totals[game.currentBet.diceHowMany]
     ) {
       console.log("bluff was right");
-      console.log(`Player with ID: ${game.currentPlayerTurn} has WON the game`);
+      console.log(`Player with ID: ${game.thisPlayerTurn} has WON the Bluff`);
       io.emit("bluffResult", {
         result: true,
-        player: game.currentPlayerTurn,
+        player: game.thisPlayerTurn,
       });
     } else {
       console.log("bluff was wrong");
-      console.log(
-        `Player with ID: ${game.currentPlayerTurn} has LOST the game`
-      );
-      io.emit("bluffResult", { result: false, player: game.currentPlayerTurn });
+      console.log(`Player with ID: ${game.prevPlayer} has LOST the Bluff`);
+      io.emit("bluffResult", { result: false, player: game.prevPlayer });
     }
   });
 };
