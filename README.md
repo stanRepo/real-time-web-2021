@@ -139,21 +139,27 @@ Some players are playing the game on 1 device and some players are playing it on
 
 ---
 
-### Coding Style
+# Coding Style
 
 For Coding style I took a look at the [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html).
 
 - When I replaced the require statements on my server-side code I noticed that socket.io doesn't support the export syntax required for this to work. So to keep my way of importing neat I chose to stick with `const x = require('/path/to/code')`
 
-### Database
+# Database
 
 For this project I used _Firebase_ to store player moves and game information.
+At the time of writing, this is not implemented yet. Instead I store the data in a variable `let game`.
 
-<details>
+# Real Time Events
 
-</details>
-
-
-## Examples
-
-
+|             Event             |                                                                       Description |
+| :---------------------------: | --------------------------------------------------------------------------------: |
+|     bluffResult {result}      |                           handle The result of the emitted Bluff by another user. |
+|        newHand {hand}         |                                      Handle the new hand of dice for this player. |
+| nextPlayerTurn {nextPlayerID} |                                                        Handle the change of turn. |
+|  startGame {thisPlayerTurn}   |                 Start the game, send along the ID of the player who's turn it is. |
+|          playerReady          |                      Tell the server that this player is ready to start the game. |
+|      playingFieldUpdate       | Update the currentBet element on the client that shows the last made bet of dice. |
+|         confirmBluff          |                                              Handle the bluff done by the client. |
+|          confirmCall          |                                               Handle the call made by the client. |
+|  socketDisconnect {playerID}  |                  Send msg to other players that this specific user left the game. |

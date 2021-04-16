@@ -16,8 +16,9 @@ exports.startGame = function (socket, socketID, game, io) {
   // start game
 
   const startingPlayer = selectStartingPlayer.select(game); // select player with first turn
-  console.log(startingPlayer);
+
   game.thisPlayerTurn = startingPlayer;
   io.emit("startGame", game.thisPlayerTurn);
+  game.status = "hasStarted";
   bool = true;
 };
