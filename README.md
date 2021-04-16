@@ -163,3 +163,4 @@ At the time of writing, this is not implemented yet. Instead I store the data in
 |         confirmBluff          |                                              Handle the bluff done by the client. |
 |          confirmCall          |                                               Handle the call made by the client. |
 |  socketDisconnect {playerID}  |                  Send msg to other players that this specific user left the game. |
+|             Login             |                                                                 Login with client |
