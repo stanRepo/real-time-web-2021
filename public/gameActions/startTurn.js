@@ -11,6 +11,10 @@ export default function (socket, startingPlayer) {
   const playerTurnInput = document.querySelector("#playerTurnInput");
   const itsNotYourTurnBanner = document.querySelector("#itsNotYourTurnBanner");
 
+  console.log(`my ID = ${myID}`);
+  console.log(`StartingPlayer ID = `);
+  console.log(startingPlayer)
+
   if (myID === startingPlayer) {
     // This player has the turn
     currentUser.classList.add("itsMyTurnAnimation");

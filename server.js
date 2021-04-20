@@ -12,6 +12,9 @@ app.use(express.static(path.resolve("public")));
 
 let game = {
   playersInRoom: {},
+  status: "hasNotStarted",
+  playersWhoHadTheirTurn: [],
+  playersAvailable: [],
 };
 let readyPlayers = [];
 
