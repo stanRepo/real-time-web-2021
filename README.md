@@ -61,37 +61,27 @@ The referee is a piece of software on the server side of this application.
 
 - Counts the number of dice and diceheads and states if player were actually bluffing or not bluffing.
 
-- Keeps track of the 🍺 score.
+- Keeps track of the score.
 
 </details>
 
-# Assignments
-
-## Assignments Week 1
-
-### Assignment 1
-
-During this assignment we worked in a group. Together we made the basic-chat app with real time functionality. [Repository](https://github.com/stanRepo/real-time-web-2021/tree/TEAM-CHAT-APP)
-
-### Assignment 2
-
-For this Assignment I chose to start working on the end assessment application. I felt like already had a good grip on the functionality of socketIO.
-
-## Assignments Week 2:
-
-### Assignment 1
-
-Since I had chosen the this game as a main concept my Lecturer Lukas told me to create 3 variations of the game. The variations should be about how the user interacts with the game.
-
-_Data Lifecycle Diagram_
+## Data Lifecycle Diagram
 
 This is what the main forces that influence the data are, who controlls them and where they are located.
 
-<details>
-
 ![Diagram](./public/assets/drawings/concept-1.svg)
 
-</details>
+## Real Time Events
+
+![Diagram](./public/assets/drawings/realTimeEventsImg.svg)
+
+# Assignments
+
+During the first assignment we worked in a group. Together we made the basic-chat app with real time functionality. [Repository](https://github.com/stanRepo/real-time-web-2021/tree/TEAM-CHAT-APP)
+
+### Concepts
+
+Since I had chosen the this game as a main concept my Lecturer Lukas told me to create 3 variations of the game. The variations should be about how the user interacts with the game.
 
 ---
 
@@ -131,7 +121,7 @@ Extra:
 
 _Concept 3_
 
-Some players are playing the game on 1 device and some players are playing it on their own device.
+This concept is focussed around offline support. The "Wordfeud"-like version. Players can disconnect their socket and close of their browser and the server will still remember which player comes from which device. Players get a message when its their turn or if the results of their Call / Bluff actions are ready.
 
 <details>
 
