@@ -9,6 +9,5 @@ exports.select = function (game) {
 
   console.log(`starting player ID: ${selectedPlayer[1].playerID}`);
 
-  game.playersWhoHadTheirTurn.push(selectedPlayer[1].playerID);
   return selectedPlayer[1].playerID;
 };

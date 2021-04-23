@@ -31,6 +31,7 @@ exports.bluff = function (socket, socketID, game, io) {
     if (
       totals[game.currentBet.whichDice] < totals[game.currentBet.diceHowMany]
     ) {
+      // bluff =  right when the person who clicked bluff was right in stating that the currentbet is false
       console.log("bluff was right");
       console.log(`Player with ID: ${game.thisPlayerTurn} has WON the Bluff`);
       io.emit("bluffResult", {
@@ -38,9 +39,10 @@ exports.bluff = function (socket, socketID, game, io) {
         player: game.thisPlayerTurn,
       });
     } else {
+      // bluff = wrong when the person who clicked bluff was wrong in stating that the currentbet is false
       console.log("bluff was wrong");
       console.log(`Player with ID: ${game.prevPlayer} has LOST the Bluff`);
-      io.emit("bluffResult", { result: false, player: game.prevPlayer });
+      io.emit("bluffResult", { result: false, player: game.thisPlayerTurn });
     }
   });
 };

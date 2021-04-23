@@ -2,7 +2,6 @@ const nextPlayerTurn = require("./nextPlayerTurn.js");
 
 exports.call = function (socket, socketID, game, io) {
   socket.on("confirmCall", (obj) => {
-    // console.dir(game);
     if (game.currentBet) {
       // check if previous bet exists
       if (game.currentBet.diceHowMany >= obj.diceHowMany) {

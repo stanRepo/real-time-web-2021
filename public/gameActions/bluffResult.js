@@ -7,7 +7,15 @@ export default function (socket) {
     if (winnerBanner) {
       winnerBanner.parentElement.removeChild(winnerBanner);
     }
-    if (obj.player === myID) {
+
+    // theres 4 possibilities on this outcome
+    // I have won
+    // I have lost
+    // Someone else won
+    // Someone else lost
+
+    // I have won
+    if (obj.player === myID && obj.result === true) {
       // add Winner Banner
       currentUser.parentElement.insertAdjacentHTML(
         "beforeend",
@@ -17,14 +25,34 @@ export default function (socket) {
       );
       const btn = document.querySelector("#winnerBanner > button");
       btn.addEventListener("click", () => {
-        btn.classList.add("hidden");
+        btn.parentElement.classList.add("hidden");
       });
-    } else {
+    } else if (obj.player === myID && obj.result === false) {
+      // I have lost
       console.log(`You lost from player: ${obj.player}`);
       document.body.insertAdjacentHTML(
         "beforebegin",
-        `<h1>YOU LOST THE BLUFF</h1>`
+        `<h3 id="bluffResult">You lost the bluff. You have lost the game</h3>`
       );
+    } else if (obj.player !== myID && obj.result === false) {
+      // Someone Else Lost
+      document.body.insertAdjacentHTML(
+        "beforebegin",
+        `<h3 id="bluffResult">Someone else lost the bluff. You are still in the game</h3>`
+      );
+    } else if (obj.player !== myID && obj.result === true) {
+      // someone else won
+      document.body.insertAdjacentHTML(
+        "beforebegin",
+        `<div id="bluffResult"><h3>Someone else lost the bluff. You are still in the game</h3><button>X</button></div>`
+      );
+    }
+
+    const bluffResultCloseBtn = document.querySelector("#bluffResult > button");
+    if (bluffResultCloseBtn) {
+      bluffResultCloseBtn.addEventListener("click", () => {
+        bluffResultCloseBtn.parentElement.classList.add("hidden");
+      });
     }
   });
 }
