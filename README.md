@@ -146,7 +146,7 @@ The code example below shows how this is handled:
 
 1. First I sum up the diceheads in an {}
 
-![Sum up hands](./public/assets/sumUpHands.png)
+![Sum up hands](./public/assets/drawings/sumUpHands.png)
 
 2. Then I use an `if else` statement to send the correct information to the user
 
