@@ -140,14 +140,14 @@ _Handling bluffResults_
 
 At multiple points during the game, the turn player can select Bluff. Now the referee/server needs to check whether the sum of all hands matches the currentBet and respond to that. The image below shows a log that visualizes how this is assessed:
 
-![Log handling bluffResults](./public/assets/handlingBluffResult.svg)
+![Log handling bluffResults](./public/assets/drawings/handlingBluffResult.svg)
 
 The code example below shows how this is handled:
 
 1. First I sum up the diceheads in an {}
 
-![Log handling bluffResults](./public/assets/sumUpHands.png)
+![Sum up hands](./public/assets/sumUpHands.png)
 
 2. Then I use an `if else` statement to send the correct information to the user
 
-![Log handling bluffResults](./public/assets/handlingBluffResultIfElse.png)
+![Determine winner with if else statement](./public/assets/drawings/handlingBluffResultIfElse.png)
