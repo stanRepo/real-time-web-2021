@@ -4,11 +4,18 @@ const app = express();
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 const port = process.env.PORT || 8080;
-const db = require("./db.js");
+const homeRoute = require("./src/routes/homeRoute.js");
+const gameRoute = require("./src/routes/gameRoute.js");
 
 socketIO = require("./src/socketIO/socketMain.js");
 
 app.use(express.static(path.resolve("public")));
+// view engine setup
+app.set("views", path.join(__dirname, "src/"));
+app.set("view engine", "ejs");
+
+app.get("/", homeRoute);
+app.get("/game", gameRoute);
 
 let game = {
   playersInRoom: {},
