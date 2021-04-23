@@ -86,6 +86,54 @@ This is what the main forces that influence the data are, who controlls them and
 
 ![Diagram](./public/assets/drawings/realTimeEventsImg.svg)
 
+# The Game Object / Referee
+
+This Object {} lives on the server and keeps track off all important information regarding the game so that it is not possible to cheat. 
+
+Below is a snapshot of the game. In this scenario 2 players played a total of 2 turns with 1 call and 1 bluff
+
+
+`{
+  playersInRoom: {
+    Xcuw0kuLtOZi9zEcAAAN: {
+      playerID: 'Xcuw0kuLtOZi9zEcAAAN',
+      currentSocket: 'yIFXTv7Y65c9g1IkAAAB',
+      status: 'ready',
+      hand: [Array]
+    },
+    mtryOUD6yegKn8WAAAAD: {
+      playerID: 'mtryOUD6yegKn8WAAAAD',
+      currentSocket: 'mtryOUD6yegKn8WAAAAD',
+      status: 'ready',
+      hand: [Array]
+    }
+  },
+  status: 'hasStarted',
+  playersWhoHadTheirTurn: [],
+  playersAvailable: [],
+  thisPlayerTurn: [
+    'Xcuw0kuLtOZi9zEcAAAN',
+    {
+      playerID: 'Xcuw0kuLtOZi9zEcAAAN',
+      currentSocket: 'yIFXTv7Y65c9g1IkAAAB',
+      status: 'ready',
+      hand: [Array]
+    }
+  ],
+  currentBet: { whichDice: '6', diceHowMany: '5' },
+  prevPlayer: 'mtryOUD6yegKn8WAAAAD',
+  nextPlayerTurn: [
+    'Xcuw0kuLtOZi9zEcAAAN',
+    {
+      playerID: 'Xcuw0kuLtOZi9zEcAAAN',
+      currentSocket: 'yIFXTv7Y65c9g1IkAAAB',
+      status: 'ready',
+      hand: [Array]
+    }
+  ]
+}`
+
+
 # Assignments
 
 During the first assignment we worked in a group. Together we made the basic-chat app with real time functionality. [Repository](https://github.com/stanRepo/real-time-web-2021/tree/TEAM-CHAT-APP)
