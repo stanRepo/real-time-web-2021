@@ -12,27 +12,26 @@ I want to recreate [this](https://nl.wikipedia.org/wiki/Dudo) game of dice. It w
 
 _Start of the game_
 
-<details>
+
 
 - All players start with 5 dice
 - All players "shuffle" their dice so that they are random. Players can't see other peoples dice.
 - 1 player starts the game (pre round highest dice throw?)
 - The playing field is the collection of all dices of all players
 
-</details>
+
 
 _Steps of the game_
 
-<details>
+
 
 1. Player 1 Starts the game by stating a dicehead and the number of times he thinks it is on the playing field.
 
 2. Next players selects CALL or BLUFF and performs the corresponding decision.
 
-</details>
 _Rules of the game_
 
-<details>
+
 1. When its a players turn he can state a dice head (1 - 6) and the number of times that dice head is on the field with all players's dice combined. For example four 3's or two 6's
 
 2. The amount of diceheads can only be higher than the previous players CALL. For example after two 3's if the next player selects "CALL" any dicehead can be selected but the number of dice (two in this case) must be higher. So three 3's is valid, one 6 is invalid.
@@ -45,11 +44,11 @@ _Rules of the game_
 
 6. When the game ends the players will see who won the game.
 
-</details>
+
 
 _Referee_
 
-<details>
+
 
 The referee is a piece of software on the server side of this application.
 
@@ -63,7 +62,7 @@ The referee is a piece of software on the server side of this application.
 
 - Keeps track of the score.
 
-</details>
+
 
 ## Data Lifecycle Diagram
 
@@ -87,6 +86,16 @@ This is what the main forces that influence the data are, who controlls them and
 
 ![Diagram](./public/assets/drawings/realTimeEventsImg.svg)
 
+# The Game Object / Referee
+
+This Object {} lives on the server and keeps track off all important information regarding the game so that it is not possible to cheat. 
+
+Below is a snapshot of the game. In this scenario 2 players played a total of 2 turns with 1 call and 1 bluff
+
+
+![GameObject](./public/assets/drawings/carbon.svg)
+
+
 # Assignments
 
 During the first assignment we worked in a group. Together we made the basic-chat app with real time functionality. [Repository](https://github.com/stanRepo/real-time-web-2021/tree/TEAM-CHAT-APP)
@@ -103,11 +112,11 @@ Every player plays on his own device connected to the "game" server by sockets.
 
 Concept Drawing:
 
-<details>
+
 
 ![Drawing Concept 1](./public/assets/drawings/RTW2021-concept-1.png)
 
-</details>
+
 
 ---
 
@@ -121,13 +130,13 @@ Extra:
 
 - This specific design lends itself good for display on a external screen. For instance screen mirroring with the Google Chromecast.
 
-<details>
+
 
 ![Drawing Concept 2a](./public/assets/drawings/RTW2021-concept-2.png)
 
 ![Drawing Concept 2b](./public/assets/drawings/RTW2021-concept-2b.png)
 
-</details>
+
 
 ---
 
@@ -135,9 +144,9 @@ _Concept 3_
 
 This concept is focussed around offline support. The "Wordfeud"-like version. Players can disconnect their socket and close of their browser and the server will still remember which player comes from which device. Players get a message when its their turn or if the results of their Call / Bluff actions are ready.
 
-<details>
 
-</details>
+
+
 
 ---
 
