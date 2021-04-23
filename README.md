@@ -93,45 +93,7 @@ This Object {} lives on the server and keeps track off all important information
 Below is a snapshot of the game. In this scenario 2 players played a total of 2 turns with 1 call and 1 bluff
 
 
-`{
-  playersInRoom: {
-    Xcuw0kuLtOZi9zEcAAAN: {
-      playerID: 'Xcuw0kuLtOZi9zEcAAAN',
-      currentSocket: 'yIFXTv7Y65c9g1IkAAAB',
-      status: 'ready',
-      hand: [Array]
-    },
-    mtryOUD6yegKn8WAAAAD: {
-      playerID: 'mtryOUD6yegKn8WAAAAD',
-      currentSocket: 'mtryOUD6yegKn8WAAAAD',
-      status: 'ready',
-      hand: [Array]
-    }
-  },
-  status: 'hasStarted',
-  playersWhoHadTheirTurn: [],
-  playersAvailable: [],
-  thisPlayerTurn: [
-    'Xcuw0kuLtOZi9zEcAAAN',
-    {
-      playerID: 'Xcuw0kuLtOZi9zEcAAAN',
-      currentSocket: 'yIFXTv7Y65c9g1IkAAAB',
-      status: 'ready',
-      hand: [Array]
-    }
-  ],
-  currentBet: { whichDice: '6', diceHowMany: '5' },
-  prevPlayer: 'mtryOUD6yegKn8WAAAAD',
-  nextPlayerTurn: [
-    'Xcuw0kuLtOZi9zEcAAAN',
-    {
-      playerID: 'Xcuw0kuLtOZi9zEcAAAN',
-      currentSocket: 'yIFXTv7Y65c9g1IkAAAB',
-      status: 'ready',
-      hand: [Array]
-    }
-  ]
-}`
+![GameObject](./public/assets/drawings/carbon.svg)
 
 
 # Assignments
