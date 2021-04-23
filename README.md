@@ -12,25 +12,18 @@ I want to recreate [this](https://nl.wikipedia.org/wiki/Dudo) game of dice. It w
 
 _Start of the game_
 
-
-
 - All players start with 5 dice
 - All players "shuffle" their dice so that they are random. Players can't see other peoples dice.
 - 1 player starts the game (pre round highest dice throw?)
 - The playing field is the collection of all dices of all players
 
-
-
 _Steps of the game_
-
-
 
 1. Player 1 Starts the game by stating a dicehead and the number of times he thinks it is on the playing field.
 
 2. Next players selects CALL or BLUFF and performs the corresponding decision.
 
 _Rules of the game_
-
 
 1. When its a players turn he can state a dice head (1 - 6) and the number of times that dice head is on the field with all players's dice combined. For example four 3's or two 6's
 
@@ -44,11 +37,7 @@ _Rules of the game_
 
 6. When the game ends the players will see who won the game.
 
-
-
 _Referee_
-
-
 
 The referee is a piece of software on the server side of this application.
 
@@ -61,8 +50,6 @@ The referee is a piece of software on the server side of this application.
 - Counts the number of dice and diceheads and states if player were actually bluffing or not bluffing.
 
 - Keeps track of the score.
-
-
 
 ## Data Lifecycle Diagram
 
@@ -88,13 +75,11 @@ This is what the main forces that influence the data are, who controlls them and
 
 # The Game Object / Referee
 
-This Object {} lives on the server and keeps track off all important information regarding the game so that it is not possible to cheat. 
+This Object {} lives on the server and keeps track off all important information regarding the game so that it is not possible to cheat.
 
 Below is a snapshot of the game. In this scenario 2 players played a total of 2 turns with 1 call and 1 bluff
 
-
 ![GameObject](./public/assets/drawings/carbon.svg)
-
 
 # Assignments
 
@@ -112,11 +97,7 @@ Every player plays on his own device connected to the "game" server by sockets.
 
 Concept Drawing:
 
-
-
 ![Drawing Concept 1](./public/assets/drawings/RTW2021-concept-1.png)
-
-
 
 ---
 
@@ -130,23 +111,15 @@ Extra:
 
 - This specific design lends itself good for display on a external screen. For instance screen mirroring with the Google Chromecast.
 
-
-
 ![Drawing Concept 2a](./public/assets/drawings/RTW2021-concept-2.png)
 
 ![Drawing Concept 2b](./public/assets/drawings/RTW2021-concept-2b.png)
-
-
 
 ---
 
 _Concept 3_
 
 This concept is focussed around offline support. The "Wordfeud"-like version. Players can disconnect their socket and close of their browser and the server will still remember which player comes from which device. Players get a message when its their turn or if the results of their Call / Bluff actions are ready.
-
-
-
-
 
 ---
 
@@ -158,5 +131,23 @@ For Coding style I took a look at the [Google JavaScript Style Guide](https://go
 
 # Database
 
-For this project I used _Firebase_ to store player moves and game information.
+For this project I wanted to use _Firebase_ to store player moves and game information.
 At the time of writing, this is not implemented yet. Instead I store the data in a variable `let game`.
+
+# Log Examples
+
+_Handling bluffResults_
+
+At multiple points during the game, the turn player can select Bluff. Now the referee/server needs to check whether the sum of all hands matches the currentBet and respond to that. The image below shows a log that visualizes how this is assessed:
+
+![Log handling bluffResults](./public/assets/handlingBluffResult.svg)
+
+The code example below shows how this is handled:
+
+1. First I sum up the diceheads in an {}
+
+![Log handling bluffResults](./public/assets/sumUpHands.png)
+
+2. Then I use an `if else` statement to send the correct information to the user
+
+![Log handling bluffResults](./public/assets/handlingBluffResultIfElse.png)
