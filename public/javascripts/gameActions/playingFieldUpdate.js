@@ -5,7 +5,8 @@ export default function (socket) {
       const el = document.querySelector("#currentBet > div");
       const text = document.querySelector("#currentBet > span");
 
-      el.innerHTML = "";
+      el.innerHTML = "<h3>Current Bet</h3>";
+
       for (let i = 0; i < parseInt(obj.currentBet.diceHowMany); i++) {
         el.insertAdjacentHTML(
           "beforeend",

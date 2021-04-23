@@ -9,5 +9,7 @@ export default function (socket) {
 }
 function deleteReadyBtn() {
   const readyBtn = document.querySelector("#readyUpBtn");
+  const readyText = document.querySelector("#readyText");
+  readyText.classList.add("hidden");
   readyBtn.classList.add("hidden");
 }
