@@ -13,10 +13,13 @@
 // 3. Emit back to clients and pass along the the current player (the one who called the bluff) and the result (wheter he was right or wrong)
 // 4. TODO: restart the game
 
+
+const gameReset = require('./gameReset.js')
+
 exports.bluff = function (socket, socketID, game, io) {
   socket.on("confirmBluff", () => {
     // count all hands. {1:n,2:n,3:n} etc
-    const currentBet = game.currentBet;
+
     console.log("---------------------PLAYERS IN ROOM  ");
     console.log(game);
 
@@ -62,18 +65,15 @@ exports.bluff = function (socket, socketID, game, io) {
       console.log("bluff was right.  sum(hands) !== currentBet");
       console.log(`Player with ID: ${game.thisPlayerTurn} has WON the Bluff`);
       io.emit("bluffResult", {
-        result: true,
-        player: game.thisPlayerTurn,
+        playerWhoWon: game.thisPlayerTurn,
+        playerWhoLost: game.prevPlayer
       });
     } else {
       // bluff = wrong when the person who clicked bluff was wrong in stating that the currentbet is false
       console.log("bluff was wrong.  sum(hands) === currentBet");
       console.log(`Player with ID: ${game.prevPlayer} has LOST the Bluff`);
-      io.emit("bluffResult", { result: false, player: game.thisPlayerTurn });
+      io.emit("bluffResult", {  playerWhoWon: game.prevPlayer, playerWhoLost:game.thisPlayerTurn });
     }
-
-    players.forEach(player=>{
-      player[1].status = "waiting for players to OK the alert"
-    })
+    gameReset.reset(socket,game,io)
   });
 };

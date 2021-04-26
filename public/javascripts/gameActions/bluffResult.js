@@ -10,31 +10,27 @@
 
 export default function (socket) {
   const myID = document.querySelector("#myID").innerText;
+  const banner = document.querySelectorAll('.endGameBanner')
+  const opponents = document.querySelector('opponents')
 
   socket.on("bluffResult", (obj) => {
+    
+
+
+    console.log(obj)
     // I have won
-    if (obj.player[0] === myID && obj.result === true) {
+    if (obj.playerWhoWon === myID) {
       // add Winner Banner
-      alert(
-        `<h3>Congratulations someone thought you were bluffing while you were not :D.</h3>`
-      );
-    } else if (obj.player[0] === myID && obj.result === false) {
+     banner[0].classList.remove("hidden")
+    } else if (obj.playerWhoLost === myID) {
       // I have lost
-      alert(
-        `<h3 id="bluffResult">You lost the bluff. You have lost the game</h3>`
-      );
-    } else if (obj.player[0] !== myID && obj.result === false) {
+      banner[1].classList.remove('hidden')
+   
+    } else if (obj.playerWhoLost !== myID && obj.playerWhoWon!== myID) {
       // Someone Else Lost
-
-      alert(
-        `<h3 id="bluffResult">Someone else lost the bluff. You are still in the game</h3>`
-      );
-    } else if (obj.player[0] !== myID && obj.result === true) {
-      // someone else won
-
-      alert(`
-      <h3>Someone else lost the bluff. You are still in the game</h3>
-      `);
-    }
+banner[2].classList.remove('hidden')
+      
+    
+    } 
   });
 }

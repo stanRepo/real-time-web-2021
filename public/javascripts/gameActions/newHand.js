@@ -4,7 +4,7 @@ export default function (socket) {
 
     
 
-myDice.innerHTML = ``
+myDice.innerHTML = `<h2>Your Dice Roll</h2>`
 hand = hand.sort()
 
 hand.forEach((dice, i)=>{

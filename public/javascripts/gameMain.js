@@ -10,6 +10,7 @@ import nextPlayerTurn from "./gameActions/nextPlayerTurn.js";
 import playingFieldUpdate from "./gameActions/playingFieldUpdate.js";
 import falseDiceInput from "./gameActions/falseDiceInput.js";
 import bluffResult from "./gameActions/bluffResult.js";
+import gameReset from './gameActions/gameReset.js'
 
 const socket = io();
 
@@ -27,7 +28,10 @@ socket.on("connect", () => {
   nextPlayerTurn(socket); // this happens when the turn changes
   falseDiceInput(socket); // this happens when a user has submitted a false Call (Bet is too low (how many dice))
   bluffResult(socket);
-  socket.on("startGame", (state) => {
+  
     startGame(socket);
-  });
+ 
+  gameReset(socket)
+
+  // 
 });

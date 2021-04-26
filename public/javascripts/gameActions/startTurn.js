@@ -11,11 +11,14 @@ export default function (socket, startingPlayer) {
   const itsNotYourTurnBanner = document.querySelector("#itsNotYourTurnBanner");
   const currentBet = document.querySelector('#currentBet > div')
   const myMoves = document.querySelector('#playerTurnInput > div:nth-child(1)')
+ 
   
   if (myID === startingPlayer) {
     myMoves.classList.remove('hidden')
     // This player has the turn
     currentUser.classList.add("itsMyTurnAnimation");
+    currentUser.classList.add('currentUserGridMyTurn')
+    currentUser.classList.remove('currentUserGridNotMyTurn')
     // remove input elements of currentUser because its not his turn
     playerTurnInput.classList.remove("hidden");
     
@@ -44,9 +47,11 @@ export default function (socket, startingPlayer) {
       socket.emit("confirmBluff");
     });
   } else {
-    myMoves.classList.add('hidden')
     // this player doesn't have the turn
+    myMoves.classList.add('hidden')
     currentUser.classList.remove("itsMyTurnAnimation");
+    currentUser.classList.remove('currentUserGridMyTurn')
+    currentUser.classList.add('currentUserGridNotMyTurn')
     opponentsIDList.forEach((el) => {
       if (el.innerText === startingPlayer) {
         // find opponent whos turn it is

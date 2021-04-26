@@ -45,13 +45,21 @@ section.currentUser {
   background-color: cornsilk;
   bottom: 0px;
   position: absolute;
-  grid-template-areas:
-    " .   userInfo . "
-    ".  myMoves myDice "
-    " . myMoves .";
+
   width: 100vw;
   max-width: 100vw;
   padding: 5px 0px;
+}
+.currentUserGridMyTurn{
+  grid-template-areas:
+  " .   userInfo . "
+  ".  myMoves myDice "
+  " . myMoves .";
+}
+
+.currentUserGridNotMyTurn{
+  grid-template-areas:
+  " .   userInfo myDice ";
 }
 
 #inputDisplayNameFieldSet{
@@ -129,6 +137,26 @@ input[type="button"]{
 .currentUser:hover{
 cursor:url('http://📙.la/🎲')
 }
+.endGameBanner{
+  width: 100vw;
+  height: 40vh;
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+}
+/* This player won. show this banner */
+#endGameBanner1{background-image: url('https://media.giphy.com/media/5T06ftQWtCMy0XFaaI/giphy.gif'); color:black}
+/* This player lost. show this banner */
+#endGameBanner2{background-color: darkslategrey; color:white;}
+
+/* This player didnt lose or win. show this banner*/
+#endGameBanner3{background-color:darkslategrey; color:white}
 
 .green {
   background-color: green;
@@ -259,5 +287,3 @@ transform: rotateZ(-90deg)
 .hidden {
   display: none;
 }
-
-
