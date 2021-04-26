@@ -4,5 +4,6 @@ exports.disconnect = function (socket, socketID, readyPlayers, io, game) {
     console.log(`user disconnected ID: ${socketID}`);
 
     io.emit("playerLeft", socketID);
+    readyPlayers.pop()
   });
 };

@@ -8,6 +8,6 @@ exports.select = function (game) {
   const selectedPlayer = arrOfPlayers[randomN];
 
   console.log(`starting player ID: ${selectedPlayer[1].playerID}`);
-
-  return selectedPlayer[1].playerID;
+return arrOfPlayers[0][1].playerID
+  // return selectedPlayer[1].playerID;
 };

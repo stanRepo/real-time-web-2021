@@ -21,7 +21,6 @@ socket.on("connect", () => {
   login(socket); // connect to the server with cookieID
 
   playersInRoom(socket);
-  userInput(socket); // listen for user input
 
   playerLeft(socket); // this happens when players leave
   newHand(socket); // this happens when a player gets a new hand

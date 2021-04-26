@@ -5,7 +5,7 @@ export default function (socket) {
       const el = document.querySelector("#currentBet > div");
       const text = document.querySelector("#currentBet > span");
 
-      el.innerHTML = "<h3>Current Bet</h3>";
+      el.innerHTML = `<h3>Current Bet</h3> <p>By player: ${obj.playerWhoMadeThisBet}</p>`;
 
       for (let i = 0; i < parseInt(obj.currentBet.diceHowMany); i++) {
         el.insertAdjacentHTML(
@@ -19,10 +19,16 @@ export default function (socket) {
     }
 
     setNextCallRequirement(obj.currentBet.diceHowMany);
+    
   });
 }
 
 function setNextCallRequirement(minimumDice) {
   const userInput = document.querySelector("#diceHowMany");
   userInput.setAttribute("min", parseInt(minimumDice));
+}
+
+function showBluffBtn(){
+  const bluffBtn = document.querySelector('#bluffBtn')
+  bluffBtn.classList.remove('hidden')
 }

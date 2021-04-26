@@ -6,36 +6,37 @@ export default function (socket, startingPlayer) {
   const currentUser = document.querySelector(".currentUser");
   const callBtn = document.querySelector("#callBtn");
   const bluffBtn = document.querySelector("#bluffBtn");
-  const whichDice = document.querySelector("#whichDice");
   const diceHowMany = document.querySelector("#diceHowMany");
   const playerTurnInput = document.querySelector("#playerTurnInput");
   const itsNotYourTurnBanner = document.querySelector("#itsNotYourTurnBanner");
-
-  console.log(`my ID = ${myID}`);
-  console.log(`StartingPlayer ID = `);
-  console.log(startingPlayer)
-
+  const currentBet = document.querySelector('#currentBet > div')
+  const myMoves = document.querySelector('#playerTurnInput > div:nth-child(1)')
+  
   if (myID === startingPlayer) {
+    myMoves.classList.remove('hidden')
     // This player has the turn
     currentUser.classList.add("itsMyTurnAnimation");
     // remove input elements of currentUser because its not his turn
     playerTurnInput.classList.remove("hidden");
-    bluffBtn.classList.remove("hidden");
-    // add banner
-    itsNotYourTurnBanner.classList.remove("hidden");
-
+    
+    if(currentBet.innerHTML !== ""){ // check if there is a bet to bluff ( so this is not the first turn)
+      bluffBtn.classList.remove("hidden");
+    }
+    
+    
     opponents.forEach((el) => {
       el.classList.remove("itsMyTurnAnimation");
     });
-
+    
     callBtn.addEventListener("click", (e) => {
-      if (diceHowMany.validity.valid === true) {
-        console.log("callbtn fired");
-        socket.emit("confirmCall", {
-          whichDice: whichDice.value,
-          diceHowMany: diceHowMany.value,
-        });
-      }
+      const whichDice = document.querySelector("input[type=radio]:checked");
+      console.log(whichDice)
+      console.log("callbtn fired");
+      socket.emit("confirmCall", {
+        whichDice: whichDice.getAttribute('data-name'),
+        diceHowMany: diceHowMany.value,
+      });
+      
     });
 
     bluffBtn.addEventListener("click", (e) => {
@@ -43,6 +44,7 @@ export default function (socket, startingPlayer) {
       socket.emit("confirmBluff");
     });
   } else {
+    myMoves.classList.add('hidden')
     // this player doesn't have the turn
     currentUser.classList.remove("itsMyTurnAnimation");
     opponentsIDList.forEach((el) => {
@@ -58,7 +60,6 @@ export default function (socket, startingPlayer) {
     // remove input elements of currentUser because its not his turn
     playerTurnInput.classList.add("hidden");
     bluffBtn.classList.add("hidden");
-    // remove banner
-    itsNotYourTurnBanner.classList.add("hidden");
+
   }
 }

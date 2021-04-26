@@ -10,10 +10,7 @@
   </head>
   <body>
     <main>
-      <header>
-        <h3 id="readyText">Click to start the game</h3>
-        <input type="button" value="START" id="readyUpBtn" />
-      </header>
+      <header id="readyButtonHeader"></header>
       <section id="playingField">
         <section id="opponents"></section>
 
@@ -24,14 +21,17 @@
 
       <section class="currentUser">
         <fieldset id="inputDisplayNameFieldSet">
-          <h1>My user ID:</h1>
+          <div>
+            <h1>My user ID:</h1>
+            <p id="myID"></p>
+
+          </div>
           <img
             id="currentUserIcon"
             src="./assets/userIcon2.png"
             alt=""
             srcset=""
           />
-          <p id="myID"></p>
           <input
             type="text"
             placeholder="Your Display Name"
@@ -41,31 +41,54 @@
           <button id="confirmUsernameBtn">Confirm Username</button>
         </fieldset>
         <fieldset>
-          <h3>Your Dice</h3>
-          <img class="myDice dice" src="./assets/dice/1.png" alt="" />
-          <img class="myDice dice" src="./assets/dice/2.png" alt="" />
-          <img class="myDice dice" src="./assets/dice/3.jpg" alt="" />
-          <img class="myDice dice" src="./assets/dice/4.png" alt="" />
-          <img class="myDice dice" src="./assets/dice/5.png" alt="" />
-          <img class="myDice dice" src="./assets/dice/6.png" alt="" />
-        </fieldset>
+          
+          <div id="myDice">
+          
+
+            <!-- <img class="myDice dice" src="./assets/dice/1.png" alt="" />
+            <img class="myDice dice" src="./assets/dice/2.png" alt="" />
+            <img class="myDice dice" src="./assets/dice/3.jpg" alt="" />
+            <img class="myDice dice" src="./assets/dice/4.png" alt="" />
+            <img class="myDice dice" src="./assets/dice/5.png" alt="" />
+            <img class="myDice dice" src="./assets/dice/6.png" alt="" /> -->
+          </fieldset>
+        </div>
 
         <fieldset>
-          <h3>Moves</h3>
-          <h4 id="itsNotYourTurnBanner" class="hidden">
-            Wait for your turn...
-          </h4>
+          
 
-          <input type="button" value="BLUFF" class="playBtn" id="bluffBtn" />
+          <input type="button" value="BLUFF" class="playBtn hidden" id="bluffBtn" />
 
           <fieldset id="playerTurnInput" class="hidden">
-            <label for="diceHowMany"
-              >How Many?<input id="diceHowMany" type="number"
-            /></label>
-            <label for="whichDice"
-              >Which dice?<input id="whichDice" type="number"
-            /></label>
+            
+            <div class="hidden">
+              <label for="diceHowMany"
+                >How Many?<input id="diceHowMany" type="number"
+              /></label>
+
+              <p>Which dice?</p>
+              <label for="radioNumberInput1"  class="labelRadioNumberInput"
+              ><input id="radioNumberInput1" type="radio" name="radioNumberInput" data-name="1"/>  <img class=" dice" src="./assets/dice/1.png" alt="" />
+                </label 
+                ><label for="radioNumberInput2" class="labelRadioNumberInput"
+                ><input id="radioNumberInput2" type="radio" name="radioNumberInput" data-name="2"/>  <img class=" dice" src="./assets/dice/2.png" alt="" />
+                </label
+                ><label for="radioNumberInput3" class="labelRadioNumberInput"
+                ><input id="radioNumberInput3" type="radio" name="radioNumberInput" data-name="3"/>  <img class=" dice" src="./assets/dice/3.png" alt="" />
+                </label
+                ><label for="radioNumberInput4" class="labelRadioNumberInput"
+                ><input id="radioNumberInput4" type="radio" name="radioNumberInput"data-name="4"/>  <img class=" dice" src="./assets/dice/4.png" alt="" />
+                </label
+                ><label for="radioNumberInput5" class="labelRadioNumberInput"
+                ><input id="radioNumberInput5" type="radio" name="radioNumberInput"data-name="5"/>  <img class=" dice" src="./assets/dice/5.png" alt="" />
+                </label
+                ><label for="radioNumberInput6" class="labelRadioNumberInput"
+                ><input id="radioNumberInput6" type="radio"name="radioNumberInput" data-name="6"/>  <img class=" dice" src="./assets/dice/6.png" alt="" />
+                </label
+              >
+            </label>
             <input type="button" value="CALL" class="playBtn" id="callBtn" />
+          </div>
           </fieldset>
         </fieldset>
       </section>

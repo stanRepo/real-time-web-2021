@@ -71,5 +71,9 @@ exports.bluff = function (socket, socketID, game, io) {
       console.log(`Player with ID: ${game.prevPlayer} has LOST the Bluff`);
       io.emit("bluffResult", { result: false, player: game.thisPlayerTurn });
     }
+
+    players.forEach(player=>{
+      player[1].status = "waiting for players to OK the alert"
+    })
   });
 };

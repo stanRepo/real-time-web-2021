@@ -4,7 +4,6 @@ export default function (socket) {
   const readyUpBtn = document.querySelector("#readyUpBtn");
   const callBtn = document.querySelector("#callBtn");
   const bluffBtn = document.querySelector("#bluffBtn");
-
   const arr = [readyUpBtn, callBtn, bluffBtn];
 
   const socketID = document.cookie;
@@ -28,7 +27,7 @@ export default function (socket) {
 
 function setReady(e, socket, socketID) {
   e.target.setAttribute("data-name", "ready"); // set user to READY
-  e.target.setAttribute("value", "Ready");
+  e.target.setAttribute("value", "Waiting for other players to be ready");
   e.target.classList.add("green");
   e.target.classList.remove("red");
   socket.emit("playerReady", socketID);
@@ -36,7 +35,7 @@ function setReady(e, socket, socketID) {
 function setUnready(e, socket, socketID) {
   // set user to UNREADY
   e.target.setAttribute("data-name", "notready");
-  e.target.setAttribute("value", "Not Ready");
+  e.target.setAttribute("value", "Click when you are ready");
   e.target.classList.add("red");
   e.target.classList.remove("green");
   socket.emit("playerNotReady", socketID);
