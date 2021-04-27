@@ -73,7 +73,7 @@ section#opponents {
   justify-content: space-around;
   gap: 10px;
   z-index: 10;
-  height:260px;
+  height:175px;
   overflow-y: auto;
   background-color: #144d32;
   padding: 20px 10px;

@@ -19,6 +19,12 @@
         src="https://media.giphy.com/media/l2JdUMnCDg6qs368g/source.gif"
         alt="Homer Simpson Whohoo"
       />
+      <label for="roomSelector"> <h4>Select Your Room</h4></label>
+      <p>Let your friends use this Room name as well so they can join you</p>
+      <form action="/game" method="post">
+      <input type="text" name="roomSelector" id="roomSelector" placeholder="#myroom">
+      <button type="submit">Join</button>
+      </form>
       <h2><a href="/game">go to game</a></h2>
     </header>
   </body>

@@ -13,6 +13,8 @@ app.use(express.static(path.resolve("public")));
 // view engine setup
 app.set("views", path.join(__dirname, "src/"));
 app.set("view engine", "ejs");
+app.use(express.json()); //Used to parse JSON bodies
+
 
 app.get("/", homeRoute);
 app.get("/game", gameRoute);
