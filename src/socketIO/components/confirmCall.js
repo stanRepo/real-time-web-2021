@@ -2,11 +2,19 @@ const nextPlayerTurn = require("./nextPlayerTurn.js");
 
 exports.call = function (socket, socketID, game, io) {
   socket.on("confirmCall", (obj) => {
+let name = "" // changing currentBet displayname from PlayerID to playerDisplayName
+if(game.playersInRoom[socketID].playerDisplayName){
+name = game.playersInRoom[socketID].playerDisplayName
+} else{
+  name = socketID
+}
+    
+    
     console.log('confirmCallFired')
     console.log(obj)
     if (game.currentBet) {
       // check if previous bet exists
-      if (game.currentBet.diceHowMany >= obj.diceHowMany) {
+      if (game.currentBet.diceHowMany >= obj.diceHowMany) { // check if bet is higher than previous bet
         console.log("STATUS: false INPUT ");
 
         console.log(`currentBet diceHowMany: ${game.currentBet.diceHowMany}`)
@@ -24,7 +32,7 @@ exports.call = function (socket, socketID, game, io) {
         io.emit("playingFieldUpdate", {
           status: "changeCurrentBet",
           currentBet: game.currentBet,
-          playerWhoMadeThisBet: socketID
+          playerWhoMadeThisBet: name
         });
         nextPlayerTurn.next(socket, socketID, game, io); // go to next player 
       }
@@ -36,7 +44,7 @@ exports.call = function (socket, socketID, game, io) {
       io.emit("playingFieldUpdate", {
         status: "changeCurrentBet",
         currentBet: game.currentBet,
-        playerWhoMadeThisBet: socketID
+        playerWhoMadeThisBet: name
       });
       nextPlayerTurn.next(socket, socketID, game, io); // go to next player
     }

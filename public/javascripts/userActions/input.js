@@ -1,4 +1,3 @@
-import userDisplayName from "./userDisplayName.js";
 
 export default function (socket) {
   const readyUpBtn = document.querySelector("#readyUpBtn");
@@ -8,7 +7,7 @@ export default function (socket) {
 
   const socketID = document.cookie;
 
-  userDisplayName(socket); // listen for user input and react
+
 
   arr.forEach((btn) => {
     btn.addEventListener("click", (e) => {

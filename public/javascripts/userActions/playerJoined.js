@@ -1,18 +1,20 @@
 import userInput from "./input.js";
-export default function (player, socket) {
+export default function (player, socket, playerObj) {
   const opponentsElement = document.querySelector("#opponents");
   const thisPlayer = document.getElementById("myID").innerText;
-  const opponent = document.getElementById(`playerID${player}`);
   const readyButton = document.querySelector("#readyButtonHeader");
-
+  const opponent = document.getElementById(`playerID${player}`);
+  
   if (thisPlayer !== player && opponent === null) {
     //  check if opponent already exists in DOM.
     //  console.log(player);
+    const storedPlayerName = localStorage.getItem(player)
     opponentsElement.insertAdjacentHTML(
       "beforeend",
       `   
-          <section id="playerID${player}"class="opponent">
-          <p>Player ID: <span>${player}</span></p>
+      <section id="playerID${player}"class="opponent">
+      <div class="opponentName"><h2>${storedPlayerName ? storedPlayerName: ""}</h2></div>
+          <p class="opponentID">Player ID: <span>${player}</span></p>
           <img src="./assets/userIcon1.png" alt="" srcset="" />
 
           <div id="opponentDiceGroup">

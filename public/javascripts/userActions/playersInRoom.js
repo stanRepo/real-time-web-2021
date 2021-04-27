@@ -9,6 +9,6 @@ export default async function playersInRoom(socket) {
 function updateDOM(players, socket) {
   console.log(players);
   for (const key in players) {
-    playerJoined(key, socket);
+    playerJoined(key, socket, players[key]);
   }
 }

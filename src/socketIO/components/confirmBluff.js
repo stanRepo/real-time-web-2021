@@ -44,27 +44,29 @@ exports.bluff = function (socket, socketID, game, io) {
       });
       return arr;
     });
-    console.log(totals);
-    console.log(
-      `Bet: The dicehead we are looking for: ${
-        totals[game.currentBet.whichDice]
-      }`
-    ); // Bet: The dicehead we are looking for
-    console.log(
-      `Bet: how many times it should be in the game: ${
-        totals[game.currentBet.diceHowMany]
-      }`
-    ); // Bet: how many times it should be in the game
-
-    // If the summed up number of diceheads is smaller than the currentBet
-    // if TRUE: the player who made the currentBet was wrong so he lost. the player who performed the bluff button is right
-    // if FALSE: the player who made the currentBet was right so he won. The player who performed the bluff button is wrong.
-
-    if (totals[game.currentBet.whichDice] < game.currentBet.diceHowMany) {
-      // bluff =  right when the person who clicked bluff was right in stating that the currentbet is false
-      console.log("bluff was right.  sum(hands) !== currentBet");
-      console.log(`Player with ID: ${game.thisPlayerTurn} has WON the Bluff`);
-      io.emit("bluffResult", {
+    try{
+      
+      console.log(totals);
+      console.log(
+        `Bet: The dicehead we are looking for: ${
+          totals[game.currentBet.whichDice]
+        }`
+        ); // Bet: The dicehead we are looking for
+        console.log(
+          `Bet: how many times it should be in the game: ${
+            totals[game.currentBet.diceHowMany]
+          }`
+          ); // Bet: how many times it should be in the game
+          
+          // If the summed up number of diceheads is smaller than the currentBet
+          // if TRUE: the player who made the currentBet was wrong so he lost. the player who performed the bluff button is right
+          // if FALSE: the player who made the currentBet was right so he won. The player who performed the bluff button is wrong.
+          
+          if (totals[game.currentBet.whichDice] < game.currentBet.diceHowMany) {
+            // bluff =  right when the person who clicked bluff was right in stating that the currentbet is false
+            console.log("bluff was right.  sum(hands) !== currentBet");
+            console.log(`Player with ID: ${game.thisPlayerTurn} has WON the Bluff`);
+            io.emit("bluffResult", {
         playerWhoWon: game.thisPlayerTurn,
         playerWhoLost: game.prevPlayer
       });
@@ -75,5 +77,8 @@ exports.bluff = function (socket, socketID, game, io) {
       io.emit("bluffResult", {  playerWhoWon: game.prevPlayer, playerWhoLost:game.thisPlayerTurn });
     }
     gameReset.reset(socket,game,io)
+  } catch{
+    
+  }
   });
 };

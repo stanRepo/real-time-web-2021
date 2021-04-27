@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./assets/dice/6.png" type="image/x-icon" />
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/game.css" />
     <title>DiceHeads.js | In Game</title>
   </head>
   <body>
+<%- include('./partials/header.ejs') %> 
+
     <main>
       
       <header id="readyButtonHeader"></header>
@@ -16,34 +18,41 @@
         <div  class="hidden endGameBanner" id="endGameBanner1"> <h1>Congratulations You've won this bluff</h1> <img src="https://media.giphy.com/media/l2Je8BWoV6mLoed0s/source.gif" alt=""></div>
         <div  class="hidden endGameBanner" id="endGameBanner2"> <h1>Uh Oh, you lost this bluff</h1> <img src="https://media.giphy.com/media/l2JdSVE0vafARCeyI/giphy.gif" alt=""></div>
         <div  class="hidden endGameBanner" id="endGameBanner3"> <h1>Someone called a bluff, you are still in the game</h1> <img src="https://media.giphy.com/media/xT5LMJSk69MGw5vqEg/giphy.gif" alt=""></div>
-        <section id="opponents"></section>
-
+        
         <section id="currentBet">
           <div id="currentBetDice"></div>
         </section>
       </section>
+        
+      <section id="opponents">
+        <div>
+          <h1>Opponents</h1>
+        </div>
+      </section>
+
 
       <section class="currentUser">
-        <fieldset id="inputDisplayNameFieldSet">
-          <div>
-            <h1>My user ID:</h1>
-            <p id="myID"></p>
-
-          </div>
+        <div id="currentUserInfo">
+          <h1>My user ID:</h1>
+          <p id="myID"></p>
+          <p id="myName"></p>
           <img
-            id="currentUserIcon"
-            src="./assets/userIcon2.png"
-            alt=""
-            srcset=""
+          id="currentUserIcon"
+          src="./assets/userIcon2.png"
+          alt=""
+          srcset=""
           />
-          <input
-            type="text"
-            placeholder="Your Display Name"
-            id="inputDisplayName"
-          />
-
-          <button id="confirmUsernameBtn">Confirm Username</button>
-        </fieldset>
+          <fieldset id="inputDisplayNameFieldSet">
+        <input
+          type="text"
+          placeholder="Your Display Name"
+          id="inputDisplayName"
+        />
+  
+        <button id="confirmUsernameBtn">Confirm Username</button>
+      </fieldset>
+        </div>
+        
         <fieldset>
   
           <div id="myDice">

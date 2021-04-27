@@ -12,11 +12,17 @@ export default function (socket) {
   const myID = document.querySelector("#myID").innerText;
   const banner = document.querySelectorAll('.endGameBanner')
   const opponents = document.querySelector('opponents')
+  const currentUser = document.querySelector("body > main > section.currentUser")
 
   socket.on("bluffResult", (obj) => {
     
+    currentUser.innerHTML = `<button id="restartBtn">RESTART</button>`
+const restartBtn = document.querySelector('#restartBtn')
+restartBtn.addEventListener('click', ()=>{
+  window.location.reload()
+})
 
-
+    // BANNERS
     console.log(obj)
     // I have won
     if (obj.playerWhoWon === myID) {

@@ -11,13 +11,14 @@ import playingFieldUpdate from "./gameActions/playingFieldUpdate.js";
 import falseDiceInput from "./gameActions/falseDiceInput.js";
 import bluffResult from "./gameActions/bluffResult.js";
 import gameReset from './gameActions/gameReset.js'
+import updateOpponentUsername from './userActions/updateOpponentUsername.js'
+import userDisplayName from "./userActions/userDisplayName.js";
 
 const socket = io();
 
 socket.on("connect", () => {
   renderCurrentUserID(socket); // needs to be first
   playingFieldUpdate(socket);
-  console.dir(`This socketID = ${document.cookie}`);
 
   login(socket); // connect to the server with cookieID
 
@@ -28,8 +29,9 @@ socket.on("connect", () => {
   nextPlayerTurn(socket); // this happens when the turn changes
   falseDiceInput(socket); // this happens when a user has submitted a false Call (Bet is too low (how many dice))
   bluffResult(socket);
-  
-    startGame(socket);
+  updateOpponentUsername(socket)
+  userDisplayName(socket); // listen for user input and react
+  startGame(socket);
  
   gameReset(socket)
 
