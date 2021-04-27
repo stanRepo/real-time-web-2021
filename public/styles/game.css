@@ -119,7 +119,7 @@ section.currentUser {
 }
 .currentUserGridMyTurn{
   grid-template-areas:
-  " .   userInfo . "
+  " .  userInfo . "
   ".  myMoves myDice "
   " . myMoves .";
 }
@@ -135,6 +135,8 @@ section.currentUser {
 }
 #currentUserInfo{
   grid-area: userInfo;
+  margin: 10px 33px;
+
 }
 
 .currentUser > fieldset:nth-child(2){

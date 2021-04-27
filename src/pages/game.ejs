@@ -33,8 +33,15 @@
 
       <section class="currentUser">
         <div id="currentUserInfo">
-          <h1>My user ID:</h1>
-          <p id="myID"></p>
+          <fieldset id="inputDisplayNameFieldSet">
+        <input
+          type="text"
+          placeholder="Your Display Name"
+          id="inputDisplayName"
+        />
+    
+        <button id="confirmUsernameBtn">Confirm Username</button>
+      </fieldset>
           <p id="myName"></p>
           <img
           id="currentUserIcon"
@@ -42,15 +49,8 @@
           alt=""
           srcset=""
           />
-          <fieldset id="inputDisplayNameFieldSet">
-        <input
-          type="text"
-          placeholder="Your Display Name"
-          id="inputDisplayName"
-        />
-  
-        <button id="confirmUsernameBtn">Confirm Username</button>
-      </fieldset>
+          <h3>My user ID:</h3>
+          <p id="myID"></p>
         </div>
         
         <fieldset>
