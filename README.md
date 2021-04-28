@@ -138,6 +138,10 @@ For Coding style I took a look at the [Google JavaScript Style Guide](https://go
 For this project I wanted to use _Firebase_ to store player moves and game information.
 At the time of writing, this is not implemented yet. Instead I store the data in a variable `let game`.
 
+Example game object right before the end of a game with 2 players.
+
+![Diagram](./public/assets/gif/gameObjectExample.png)
+
 # Log Examples
 
 _Handling bluffResults_
