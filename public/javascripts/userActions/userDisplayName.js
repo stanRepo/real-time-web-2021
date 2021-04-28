@@ -12,6 +12,7 @@ const myID = document.querySelector("#myID").innerHTML
  if(storedUsername){
    console.log(myID)
    fieldset.innerHTML = `<h1>${storedUsername}</h1>`
+   socket.emit('updateMyUsername', storedUsername)
  }else{
    if(btn){
      btn.addEventListener("click", (e) => {

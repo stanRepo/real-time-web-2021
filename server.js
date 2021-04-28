@@ -33,7 +33,7 @@ io.on("connection", (socket) => {
       `User with this socket ID: ${socket.id} just connected. playerID: ${socketID}`
     );
 
-    io.emit("playersInRoom", game.playersInRoom);
+   
     //console.log(socketIO);
     socketIO.socketMain(socket, socketID, game, readyPlayers, io);
   });

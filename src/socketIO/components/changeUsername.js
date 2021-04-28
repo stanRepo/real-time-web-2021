@@ -8,4 +8,7 @@ exports.change = function(socket, socketID, game, io){
         }
         io.emit('updateOpponentUsername', obj)
     })
+    socket.on('updateMyUsername', (username)=>{
+        game.playersInRoom[socketID].playerDisplayName = username
+    })
 }

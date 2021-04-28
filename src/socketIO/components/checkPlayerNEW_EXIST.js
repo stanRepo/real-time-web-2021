@@ -1,4 +1,4 @@
-exports.checkPlayerNEW_EXIST = function (socket, socketID, game) {
+exports.checkPlayerNEW_EXIST = function (socket, socketID, game, io) {
   if (game.playersInRoom[socketID]) {
     // check if socketID is from existing user
     console.log("existing player, updating currentSocket of player");
@@ -25,4 +25,5 @@ if(game.currentBet !== undefined){
       currentSocket: socket.id,
     };
   }
+  io.emit("playersInRoom", game.playersInRoom);
 };

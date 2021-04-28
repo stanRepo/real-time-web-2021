@@ -7,12 +7,12 @@ const changeUsername = require('./components/changeUsername.js')
 
 exports.socketMain = function (socket, socketID, game, readyPlayers, io) {
   // console.log(playerReadyStatus);
+  changeUsername.change(socket, socketID, game, io)
   playerReadyStatus.playerReadyStatus(socket, socketID, game, readyPlayers, io);
-  checkPlayerNEW_EXIST.checkPlayerNEW_EXIST(socket, socketID, game);
+  checkPlayerNEW_EXIST.checkPlayerNEW_EXIST(socket, socketID, game, io);
 
   socketDisconnect.disconnect(socket, socketID, readyPlayers, io, game);
   confirmCall.call(socket, socketID, game, io);
   confirmBluff.bluff(socket, socketID, game, io);
 
-  changeUsername.change(socket, socketID, game, io)
 };

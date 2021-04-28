@@ -8,12 +8,12 @@ export default function (player, socket, playerObj) {
   if (thisPlayer !== player && opponent === null) {
     //  check if opponent already exists in DOM.
     //  console.log(player);
-    const storedPlayerName = localStorage.getItem(player)
+    // const storedPlayerName = localStorage.getItem(player)
     opponentsElement.insertAdjacentHTML(
       "beforeend",
       `   
       <section id="playerID${player}"class="opponent">
-      <div class="opponentName"><h2>${storedPlayerName ? storedPlayerName: ""}</h2></div>
+      <div class="opponentName"><h2>${playerObj.playerDisplayName}</h2></div>
           <p class="opponentID">Player ID: <span>${player}</span></p>
           <img src="./assets/userIcon1.png" alt="" srcset="" />
 
