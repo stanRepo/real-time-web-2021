@@ -140,7 +140,7 @@ At the time of writing, this is not implemented yet. Instead I store the data in
 
 Example game object right before the end of a game with 2 players.
 
-![Diagram](./public/assets/gif/gameObjectExample.png)
+![Diagram](./public/assets/drawings/gameObjectExample.png)
 
 # Log Examples
 
