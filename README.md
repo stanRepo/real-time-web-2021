@@ -2,8 +2,21 @@
 
 [Live Demo](https://rtw2021.herokuapp.com)
 
+- [Main Assignment](#main-assignment)
+  * [Visual demo](#visual-demo)
+  * [Case](#case)
+  * [Data Lifecycle Diagram](#data-lifecycle-diagram)
+  * [Real Time Events](#real-time-events)
+- [The Game Object / Referee](#the-game-object---referee)
+- [Assignments](#assignments)
+    + [Concepts](#concepts)
+- [Coding Style](#coding-style)
+- [Database](#database)
+- [Log Examples](#log-examples)
+
 ## Visual demo
 ![Diagram](./public/assets/gif/diceheadsGif.gif)
+
 
 
 ## Case
@@ -83,7 +96,7 @@ This Object {} lives on the server and keeps track off all important information
 
 Below is a snapshot of the game. In this scenario 2 players played a total of 2 turns with 1 call and 1 bluff
 
-![GameObject](./public/assets/drawings/carbon.svg)
+![GameObject](./public/assets/drawings/gameObjectExample.png)
 
 # Assignments
 
