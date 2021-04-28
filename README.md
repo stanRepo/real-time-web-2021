@@ -2,6 +2,10 @@
 
 [Live Demo](https://rtw2021.herokuapp.com)
 
+## Visual demo
+![Diagram](./public/assets/gif/diceheadsGif.gif)
+
+
 ## Case
 
 ---
