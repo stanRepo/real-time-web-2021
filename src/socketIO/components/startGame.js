@@ -23,5 +23,6 @@ exports.startGame = function (socket, socketID, game, io) {
     const currentPlayerSocket = player[1].currentSocket; // just for readability of next lines // currentSocket = the socketID which has the socket connection to the server
     io.to(currentPlayerSocket).emit("newHand", thisHand); // sendHand
   });
+  game.numberOfDice = Object.entries(game.playersInRoom).length * 6  // 6 is default right now for number of dice
   io.emit("startGame", game.thisPlayerTurn); // start game
 };

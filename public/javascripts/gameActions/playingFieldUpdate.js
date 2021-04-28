@@ -5,7 +5,7 @@ export default function (socket) {
       const el = document.querySelector("#currentBet > div");
       const text = document.querySelector("#currentBet > span");
 
-      el.innerHTML = `<h3>Current Bet</h3> <p>By player: ${obj.playerWhoMadeThisBet}</p>`;
+      el.innerHTML = `<h3>Current Bet</h3> <p>By player: ${obj.playerWhoMadeThisBet}</p> <br> `;
 
       for (let i = 0; i < parseInt(obj.currentBet.diceHowMany); i++) {
         el.insertAdjacentHTML(
@@ -16,6 +16,7 @@ export default function (socket) {
         `
         );
       }
+      el.insertAdjacentHTML('beforeend', `<p>Dice in game: ${obj.numberOfDice}</p>`)
     }
 
     setNextCallRequirement(obj.currentBet.diceHowMany);

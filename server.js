@@ -24,6 +24,7 @@ let game = {
   status: "hasNotStarted",
   playersWhoHadTheirTurn: [],
   playersAvailable: [],
+  numberOfDice: null
 };
 let readyPlayers = [];
 
@@ -32,6 +33,7 @@ io.on("connection", (socket) => {
     console.log(
       `User with this socket ID: ${socket.id} just connected. playerID: ${socketID}`
     );
+
 
    
     //console.log(socketIO);

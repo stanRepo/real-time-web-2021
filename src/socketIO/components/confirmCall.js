@@ -32,7 +32,8 @@ name = game.playersInRoom[socketID].playerDisplayName
         io.emit("playingFieldUpdate", {
           status: "changeCurrentBet",
           currentBet: game.currentBet,
-          playerWhoMadeThisBet: name
+          playerWhoMadeThisBet: name,
+          numberOfDice: game.numberOfDice
         });
         nextPlayerTurn.next(socket, socketID, game, io); // go to next player 
       }
@@ -44,7 +45,8 @@ name = game.playersInRoom[socketID].playerDisplayName
       io.emit("playingFieldUpdate", {
         status: "changeCurrentBet",
         currentBet: game.currentBet,
-        playerWhoMadeThisBet: name
+        playerWhoMadeThisBet: name,
+        numberOfDice: game.numberOfDice
       });
       nextPlayerTurn.next(socket, socketID, game, io); // go to next player
     }

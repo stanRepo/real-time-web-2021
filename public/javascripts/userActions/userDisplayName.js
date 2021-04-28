@@ -11,7 +11,7 @@ const myID = document.querySelector("#myID").innerHTML
  // check if a usernme was previuously stored
  if(storedUsername){
    console.log(myID)
-   fieldset.innerHTML = `<h1>${storedUsername}</h1>`
+   fieldset.innerHTML = `<h1>${storedUsername ? storedUsername : "No Username"}</h1>`
    socket.emit('updateMyUsername', storedUsername)
  }else{
    if(btn){

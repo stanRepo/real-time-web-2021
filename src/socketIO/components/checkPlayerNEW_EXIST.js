@@ -13,7 +13,8 @@ if(game.currentBet !== undefined){
   socket.emit("playingFieldUpdate", { // add currentBet to UI
     status: "changeCurrentBet",
     currentBet: game.currentBet,
-    playerWhoMadeThisBet: game.thisPlayerTurn
+    playerWhoMadeThisBet: game.thisPlayerTurn,
+    numberOfDice: game.numberOfDice
   });
 }
   } else {
