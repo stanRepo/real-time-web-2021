@@ -73,10 +73,11 @@ section#opponents {
   justify-content: space-around;
   gap: 10px;
   z-index: 10;
-  height:175px;
+  height:215px;
   overflow-y: auto;
   background-color: #144d32;
   padding: 20px 10px;
+  margin: 25px 20px;
 }
 
 #opponents > div >h1{
@@ -110,8 +111,8 @@ section#opponents {
 section.currentUser {
   display: grid;
   background-color: cornsilk;
-  bottom: 0px;
-  position: absolute;
+ 
+ 
 
   width: 100vw;
   max-width: 100vw;
