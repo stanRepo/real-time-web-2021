@@ -138,6 +138,8 @@ _Concept 3_
 
 This concept is focussed around offline support. The "Wordfeud"-like version. Players can disconnect their socket and close of their browser and the server will still remember which player comes from which device. Players get a message when its their turn or if the results of their Call / Bluff actions are ready.
 
+In terms of user interface this concept shares a lot of the game-related aspects in the same way as the other concepts.
+
 ---
 
 # Coding Style
@@ -145,6 +147,7 @@ This concept is focussed around offline support. The "Wordfeud"-like version. Pl
 For Coding style I took a look at the [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html).
 
 - When I replaced the require statements on my server-side code I noticed that socket.io doesn't support the export syntax required for this to work. So to keep my way of importing neat I chose to stick with `const x = require('/path/to/code')`
+
 
 # Database
 
@@ -172,3 +175,12 @@ The code example below shows how this is handled:
 2. Then I use an `if else` statement to send the correct information to the user
 
 ![Determine winner with if else statement](./public/assets/drawings/handlingBluffResultIfElse.png)
+
+# Conclusion
+
+Besides the serious mental excercise, this project was a lot of fun to create. I encountered numerous code related problems (thing to work out) during the creating of this app. 
+I've written about these in the [Wiki of this project](https://github.com/stanRepo/real-time-web-2021/wiki)
+
+
+
+
