@@ -1,21 +1,43 @@
-# Main Assignment
+# Index
 
-[Live Demo](https://rtw2021.herokuapp.com)
-
-- [Main Assignment](#main-assignment)
+- [Index](#index)
+- [Installation](#installation)
   * [Visual demo](#visual-demo)
+- [Main Assignment](#main-assignment)
+  * [Visual demo](#visual-demo-1)
   * [Case](#case)
   * [Data Lifecycle Diagram](#data-lifecycle-diagram)
   * [Real Time Events](#real-time-events)
-- [The Game Object / Referee](#the-game-object---referee)
+  * [The Game Object / Referee](#the-game-object---referee)
 - [Assignments](#assignments)
-    + [Concepts](#concepts)
+- [Concepts](#concepts)
+  * [Concept 1](#concept-1)
+  * [Concept 2](#concept-2)
+  * [Concept 3](#concept-3)
 - [Coding Style](#coding-style)
 - [Database](#database)
 - [Log Examples](#log-examples)
+- [Conclusion](#conclusion)
+
+# Installation
+
+Steps to lauch the app in a local environment:
+
+1. Clone this repository to your local device.
+2. Open up the directory which it was cloned to in a terminal
+3. run the following script: `npm run dev` in this terminal.
+
+This app has been tested to work without breaking on Heroku therefore I advice you to use Heroku exclusively when going live. 
 
 ## Visual demo
 ![Diagram](./public/assets/gif/diceheadsGif.gif)
+
+# Main Assignment
+
+
+## Visual demo
+![Diagram](./public/assets/gif/diceheadsGif.gif)
+
 
 
 
@@ -90,7 +112,7 @@ This is what the main forces that influence the data are, who controlls them and
 
 ![Diagram](./public/assets/drawings/realTimeEventsImg.svg)
 
-# The Game Object / Referee
+## The Game Object / Referee
 
 This Object {} lives on the server and keeps track off all important information regarding the game so that it is not possible to cheat.
 
@@ -102,13 +124,13 @@ Below is a snapshot of the game. In this scenario 2 players played a total of 2 
 
 During the first assignment we worked in a group. Together we made the basic-chat app with real time functionality. [Repository](https://github.com/stanRepo/real-time-web-2021/tree/TEAM-CHAT-APP)
 
-### Concepts
+# Concepts
 
 Since I had chosen the this game as a main concept my Lecturer Lukas told me to create 3 variations of the game. The variations should be about how the user interacts with the game.
 
 ---
 
-_Concept 1_
+## Concept 1
 
 Every player plays on his own device connected to the "game" server by sockets.
 
@@ -118,7 +140,7 @@ Concept Drawing:
 
 ---
 
-_Concept 2_
+## Concept 2
 
 Every player is connected to the same device and plays the game on this single device. This concept is based more around the idea of coming together and play a board game. A form of socializing. Adding a layer of playfullness to a different (related / non-related) social activity. Players are invited to use this game as a "party" game.
 
@@ -134,7 +156,7 @@ Extra:
 
 ---
 
-_Concept 3_
+## Concept 3
 
 This concept is focussed around offline support. The "Wordfeud"-like version. Players can disconnect their socket and close of their browser and the server will still remember which player comes from which device. Players get a message when its their turn or if the results of their Call / Bluff actions are ready.
 
@@ -181,6 +203,8 @@ The code example below shows how this is handled:
 Besides the serious mental excercise, this project was a lot of fun to create. I encountered numerous code related problems (thing to work out) during the creating of this app. 
 I've written about these in the [Wiki of this project](https://github.com/stanRepo/real-time-web-2021/wiki)
 
+During this project I feel like I challenged myself. The amount of functionality seemed somwhat overwhelming to work out on my own. The diagrams helped me conceptualize the problem I'm working on well. Therefore it helped me to get back in touch with reality and algohorithmic thinking. 
+I feel like I could do better when doing it all over again. I would try to make some functions "bigger" but also more logical. For instance updating the UI in any way could be 1 function that holds a switch that performs different UI changes based on the message send by the servers socket. 
 
 
 
