@@ -15,7 +15,7 @@ exports.disconnect = function (socket, socketID, readyPlayers, io, game) {
     console.log(game.status)
     console.log(game.thisPlayerTurn)
     console.log(socketID)
-    if(game.thisPlayerTurn === socketID && game.status === "hasStarted"){
+    if(game.thisPlayerTurn === socketID && game.status === "hasStarted"){ // check if this player had the turn and if so pass the turn on to the next player
 nextPlayer.next(socket, socketID, game, io)
     }
   });
