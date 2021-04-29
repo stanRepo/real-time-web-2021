@@ -29,21 +29,16 @@ Steps to lauch the app in a local environment:
 
 This app has been tested to work without breaking on Heroku therefore I advice you to use Heroku exclusively when going live. 
 
-## Visual demo
-![Diagram](./public/assets/gif/diceheadsGif.gif)
-
 # Main Assignment
 
-
 ## Visual demo
 ![Diagram](./public/assets/gif/diceheadsGif.gif)
 
-
-
+---
 
 ## Case
 
----
+
 
 _Concept_
 
